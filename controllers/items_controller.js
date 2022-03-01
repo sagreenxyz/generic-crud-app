@@ -14,6 +14,11 @@ items.get('/', (req, res) => {
     ); // ./views.index.jsx
 });
 
+// NEW
+items.get('/new', (req, res) => {
+    res.render('new');
+});
+
 // SHOW
 items.get('/:arrayIndex', (req, res) => {
     // res.send(Item[req.params.arrayIndex]);
