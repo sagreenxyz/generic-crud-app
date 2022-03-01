@@ -11,8 +11,8 @@ function Show({item}) {
                 and it
                 {
                     item.isItem
-                    ? <span>Is an Item</span>
-                    : <span>Is NOT an Item</span>
+                    ? <span> Is an Item</span>
+                    : <span> Is NOT an Item</span>
                 }
             </p>
             <img src={item.image} alt={item.name} />
