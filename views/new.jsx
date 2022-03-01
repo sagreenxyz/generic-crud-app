@@ -9,7 +9,7 @@ function New() {
                 <label htmlFor="name">Name</label>
                 <input type="text" name="name" id="name" required />
                 <label htmlFor="image">Image</label>
-                <input type="text" name="image" id="image" />
+                <input type="url" name="image" id="image" pattern="(http[s]?:\/\/.*\.(?:png|jpg|gif|svg|jpeg))"/>
                 <label htmlFor="isItem">Is an Item?</label>
                 <input type="checkbox" name="isItem" id="isItem" defaultChecked />
                 <br />
