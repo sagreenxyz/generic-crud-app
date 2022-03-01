@@ -8,7 +8,8 @@ items.get('/', (req, res) => {
     // res.send(Item);
     res.render('index', 
         {
-            items: Item
+            items: Item,
+            title: 'Index Page'
         }
     ); // ./views.index.jsx
 });

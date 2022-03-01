@@ -1,15 +1,23 @@
 const React = require('react');
 const Default = require('./layouts/Default');
 
-function Index({items}) {
+function Index({items, title}) {
     return (
-        <Default>
+        <Default title={title}>
             <h2>Index Page</h2>
             {/* This is a JSX comment. */}
             {/* <p>This is the item: {items[0].name}</p> */}
             <ul>
                 {
-                    
+                    items.map((item, index) => {
+                        return (
+                            <li key={index}>
+                                <a href={`/items/${index}`}>
+                                    {item.name}
+                                </a>
+                            </li>
+                        )
+                    })
                 }
             </ul>
         </Default>
