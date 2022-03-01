@@ -6,7 +6,7 @@ const Item = require('../models/items.js')
 items.get('/', (req, res) => {
     // res.send('This is the index at /items');
     // res.send(Item);
-    res.render('index',
+    res.status(200).render('index',
         {
             items: Item,
             title: 'Index Page'
@@ -16,7 +16,7 @@ items.get('/', (req, res) => {
 
 // NEW
 items.get('/new', (req, res) => {
-    res.render('new');
+    res.status(200).render('new');
 });
 
 // SHOW
@@ -34,21 +34,21 @@ items.get('/:arrayIndex', (req, res) => {
 // CREATE
 items.post('/', (req, res) => {
     if (!req.body.image) {
-      req.body.image = 'https://images.unsplash.com/photo-1517686469429-8bdb88b9f907?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80'
+        req.body.image = 'https://images.unsplash.com/photo-1517686469429-8bdb88b9f907?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80'
     }
-    if(req.body.isItem === 'on') {
+    if (req.body.isItem === 'on') {
         req.body.isItem === 'true';
     } else {
         req.body.isItem === 'false';
     };
     Item.push(req.body);
     // res.send(Item);
-    res.redirect('/items');
+    res.status(200).redirect('/items');
 });
 
 // DELETE
-items.delete('/indexArray', (req, res) => {
-    Item.splice(req.params.indexArray, 1);
+items.delete('/:indexArray', (req, res) => {
+    Item.splice(req.params.arrayIndex, 1);
     res.status(303).redirect('/items');
 })
 
