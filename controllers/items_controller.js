@@ -16,7 +16,10 @@ items.get('/', (req, res) => {
 
 // SHOW
 items.get('/:arrayIndex', (req, res) => {
-    res.send(Item[req.params.arrayIndex]);
+    // res.send(Item[req.params.arrayIndex]);
+    res.render('Show', {
+        item: Item[req.params.arrayIndex]
+    });
 });
 
 module.exports = items;
