@@ -22,8 +22,19 @@ items.get('/:arrayIndex', (req, res) => {
             item: Item[req.params.arrayIndex]
         });
     } else {
-        res.send('404');
+        res.render('error404');
     }
+});
+
+// CREATE
+items.post('/', (req, res) => {
+    if(req.body.isItem === 'on') {
+        req.body.isItem === 'true';
+    } else {
+        req.body.isItem === 'false';
+    };
+    Item.push(req.body);
+    res.send(Item);
 });
 
 module.exports = items;
