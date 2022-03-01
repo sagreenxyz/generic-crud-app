@@ -11,7 +11,7 @@ items.get('/', (req, res) => {
             items: Item,
             title: 'Index Page'
         }
-    ); // ./views.index.jsx
+    ); // ./views/index.jsx
 });
 
 // NEW
@@ -45,5 +45,11 @@ items.post('/', (req, res) => {
     // res.send(Item);
     res.redirect('/items');
 });
+
+// DELETE
+items.delete('/indexArray', (req, res) => {
+    Item.splice(req.params.indexArray, 1);
+    res.status(303).redirect('/items');
+})
 
 module.exports = items;
