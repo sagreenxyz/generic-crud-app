@@ -6,7 +6,7 @@ const Item = require('../models/items.js')
 items.get('/', (req, res) => {
     // res.send('This is the index at /items');
     // res.send(Item);
-    res.render('index', 
+    res.render('index',
         {
             items: Item,
             title: 'Index Page'
@@ -17,9 +17,13 @@ items.get('/', (req, res) => {
 // SHOW
 items.get('/:arrayIndex', (req, res) => {
     // res.send(Item[req.params.arrayIndex]);
-    res.render('Show', {
-        item: Item[req.params.arrayIndex]
-    });
+    if (Item[req.params.arrayIndex]) {
+        res.render('Show', {
+            item: Item[req.params.arrayIndex]
+        });
+    } else {
+        res.send('404');
+    }
 });
 
 module.exports = items;
