@@ -26,4 +26,3 @@ function Show({item, index}) {
 
 module.exports = Show;
 
-// NOTE:  See 2022-02-28 18:47:00
