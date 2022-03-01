@@ -8,4 +8,9 @@ items.get('/', (req, res) => {
     res.send(Item);
 });
 
+// SHOW
+items.get('/:arrayIndex', (req, res) => {
+    res.send(Item[req.params.arrayIndex]);
+});
+
 module.exports = items;
