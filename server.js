@@ -7,6 +7,11 @@ const PORT = process.env.PORT;
 // console.log(PORT);
 const app = express();
 
+// MIDDLEWARE - This must be added before ROUTES
+app.set('views', __dirname + '/views');
+app.set('view engine', 'jsx');
+app.engine('jsx', require('express-react-views').createEngine());
+
 // ROUTES
 app.get('/', (req, res) => {
     res.send('Welcome to the Generic CRUD Application...');
