@@ -6,7 +6,11 @@ const Item = require('../models/items.js')
 items.get('/', (req, res) => {
     // res.send('This is the index at /items');
     // res.send(Item);
-    res.render('index'); // ./views.index.jsx
+    res.render('index', 
+        {
+            items: Item
+        }
+    ); // ./views.index.jsx
 });
 
 // SHOW
