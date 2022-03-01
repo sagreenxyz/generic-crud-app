@@ -20,6 +20,9 @@ function Index({items, title}) {
                     })
                 }
             </ul>
+            <div className="newButton">
+                <a href="/items/new"><button>Add a New Item</button></a>
+            </div>
         </Default>
     )
 }
