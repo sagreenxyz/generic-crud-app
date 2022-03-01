@@ -1,7 +1,7 @@
 const React = require('react');
 const Default = require('./layouts/Default');
 
-function Show({item}) {
+function Show({item, index}) {
     console.log(item.name);
     return (
         <Default>
@@ -16,6 +16,9 @@ function Show({item}) {
                 }
             </p>
             <img src={item.image} alt={item.name} />
+            <form action={`/items/${index}?_method=DELETE`} method="POST">
+                <input type="submit" value="DELETE" />
+            </form>
             <li><a href="/Items">Go Home</a></li>
         </Default>
     )

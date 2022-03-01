@@ -24,7 +24,8 @@ items.get('/:arrayIndex', (req, res) => {
     // res.send(Item[req.params.arrayIndex]);
     if (Item[req.params.arrayIndex]) {
         res.render('Show', {
-            item: Item[req.params.arrayIndex]
+            item: Item[req.params.arrayIndex],
+            index: req.params.arrayIndex
         });
     } else {
         res.render('error404');
