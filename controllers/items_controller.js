@@ -49,7 +49,6 @@ items.post('/', (req, res) => {
 
 // DELETE
 items.delete('/:arrayIndex', (req, res) => {
-    console.log(req.params.arrayIndex);
     Item.splice(req.params.arrayIndex, 1);
     res.status(303).redirect('/items');
 })
