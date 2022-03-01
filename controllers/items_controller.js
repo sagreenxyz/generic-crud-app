@@ -53,4 +53,15 @@ items.delete('/:arrayIndex', (req, res) => {
     res.status(303).redirect('/items');
 })
 
+// UPDATE
+items.put('/:arrayIndex', (req, res) => {
+    if(req.body.isItem === 'on') {
+        req.body.isItem = true;
+    } else {
+        req.body.isItem = false;
+    };
+    Item[req.params.arrayIndex] = req.body;
+    res.redirect(`/items/${req.params.arrayIndex}`);
+});
+
 module.exports = items;
