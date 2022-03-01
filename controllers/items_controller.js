@@ -5,7 +5,8 @@ const Item = require('../models/items.js')
 // INDEX
 items.get('/', (req, res) => {
     // res.send('This is the index at /items');
-    res.send(Item);
+    // res.send(Item);
+    res.render('index'); // ./views.index.jsx
 });
 
 // SHOW
