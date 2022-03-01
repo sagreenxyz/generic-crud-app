@@ -34,7 +34,8 @@ items.post('/', (req, res) => {
         req.body.isItem === 'false';
     };
     Item.push(req.body);
-    res.send(Item);
+    // res.send(Item);
+    res.redirect('/items');
 });
 
 module.exports = items;
