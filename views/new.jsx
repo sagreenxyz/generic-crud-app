@@ -15,6 +15,9 @@ function New() {
                 <br />
                 <input type="submit" />
             </form>
+            <div className="backButton">
+                <a href="/items"><button>Go Back to the Index</button></a>
+            </div>
         </Default>
     )
 }
