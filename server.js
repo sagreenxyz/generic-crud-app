@@ -22,6 +22,11 @@ app.get('/', (req, res) => {
 const itemsController = require('./controllers/items_controller.js');
 app.use('/items', itemsController);
 
+// 404 Page
+app.get('*', (req, res) => {
+    res.send('404');
+});
+
 // LISTEN
 app.listen(PORT, () => {
     console.log(`Generic CRUD App at http://localhost:${PORT}`);
