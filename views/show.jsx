@@ -1,8 +1,7 @@
 const React = require('react');
 const Default = require('./layouts/Default');
 
-function Show({item, index}) {
-    console.log(item.name);
+function Show({ item, index }) {
     return (
         <Default>
             <h2>Show Page</h2>
@@ -11,11 +10,17 @@ function Show({item, index}) {
                 and it
                 {
                     item.isItem
-                    ? <span> Is an Item</span>
-                    : <span> Is NOT an Item</span>
+                        ? <span> Is an Item</span>
+                        : <span> Is NOT an Item</span>
                 }
             </p>
             <img src={item.image} alt={item.name} />
+            <h4>Contents:</h4>
+            <ul>
+                {item.contents.map((content) =>
+                    <li key={content}>{content}</li>
+                )}
+            </ul>
             <a href={`/items/${index}/edit`}><button>Edit</button></a>
             <form action={`/items/${index}?_method=DELETE`} method="POST">
                 <input type="submit" value="DELETE" />
