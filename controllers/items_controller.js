@@ -19,6 +19,14 @@ items.get('/new', (req, res) => {
     res.status(200).render('new');
 });
 
+// EDIT
+items.get('/:arrayIndex/edit', (req, res) => {
+    res.render('edit', {
+        item: Item[req.params.arrayIndex],
+        index: req.params.arrayIndex
+    });
+});
+
 // SHOW
 items.get('/:arrayIndex', (req, res) => {
     // res.send(Item[req.params.arrayIndex]);
