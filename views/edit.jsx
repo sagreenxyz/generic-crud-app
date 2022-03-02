@@ -5,7 +5,7 @@ function Edit({item, index}) {
     return (
         <Default>
             <h2>Edit an Item</h2>
-            <form>
+            <form action={`/items/${index}?_method=PUT`} method="POST">
                 <label htmlFor="name">Name</label>
                 <input type="text" name="name" id="name" required defaultValue={item.name} />
                 <label htmlFor="image">Image</label>
