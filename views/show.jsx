@@ -16,6 +16,7 @@ function Show({item, index}) {
                 }
             </p>
             <img src={item.image} alt={item.name} />
+            <a href={`/items/${index}/edit`}><button>Edit</button></a>
             <form action={`/items/${index}?_method=DELETE`} method="POST">
                 <input type="submit" value="DELETE" />
             </form>
@@ -25,4 +26,3 @@ function Show({item, index}) {
 }
 
 module.exports = Show;
-
